@@ -16,7 +16,7 @@ func rule1(grid [][]int) {
 			if grid[i][j] != 0 {
 				around, check := check_around(grid, i,j)
 				if check == grid[i][j] {
-					fmt.Print("Square is safe", i,j)
+					fmt.Print("Squares around are safe", i,j)
 				}
 			}
 		}
@@ -28,7 +28,7 @@ func check_around(grid [][]int,i int, j int) ([]int, int) {
 	empty_squares_around:= 0
 	for v:=0;v<len(touching);v++ {
 		element := grid[touching[v][0]][touching[v][1]];
-		if element == 0 {
+		if element == 9 || element == 10 {
 			empty_squares_around += 1;
 		}
 		around = append(around, element)
